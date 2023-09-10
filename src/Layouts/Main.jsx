@@ -19,9 +19,9 @@ const Main = () => {
                     <Col lg={6}>
                         <h2>Main content coming...</h2>
                     </Col>
-                        <RightNav></RightNav>
-                    <Col lg={3}>
 
+                    <Col lg={3}>
+                        <RightNav></RightNav>
                     </Col>
                 </Row>
             </Container>
