@@ -8,8 +8,12 @@ const NewsCard = ({ news }) => {
     const { _id, title, details, image_url, author } = news;
     return (
         <Card className="mb-4">
-            <Card.Header>
+            <Card.Header className='d-flex'>
                 <Image style={{height:'40px'}} src={author.img} roundedCircle />
+                <div>
+                    <p>{author.name}</p>
+                    <p>{author.published_date}</p>
+                </div>
             </Card.Header>
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
