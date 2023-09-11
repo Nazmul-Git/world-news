@@ -14,7 +14,7 @@ const Header = () => {
                 <p>{moment().format("dddd, MMMM Do, YYYY, h:mm:ss a")}</p>
             </div>
             <div className='d-flex  bg-success p-2 text-dark bg-opacity-25'>
-                <Button variant='danger'>Latest</Button>
+                <Button variant='danger'>Breaking</Button>
                 <Marquee speed={100} pauseOnHover={true}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, distinctio!.... Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat quo vitae similique accusantium error. Fuga eaque ut molestias velit harum!
                 </Marquee>
             </div>
