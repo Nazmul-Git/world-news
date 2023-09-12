@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
+import Editors from '../Editors/Editors';
 
 const News = () => {
     const news = useLoaderData();
@@ -20,6 +21,8 @@ const News = () => {
                     <Link to={`/category/${category_id}`}><Button variant='danger'><FaArrowAltCircleLeft></FaArrowAltCircleLeft> All news in this category.</Button></Link>
                 </Card.Body>
             </Card>
+
+            <Editors></Editors>
         </div>
     );
 };

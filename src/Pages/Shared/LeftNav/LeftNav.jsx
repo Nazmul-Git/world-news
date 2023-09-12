@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LeftNavDown from '../LeftNavDown/LeftNavDown';
 
 const LeftNav = () => {
     const [categories, setCategories] = useState([]);
@@ -22,6 +23,7 @@ const LeftNav = () => {
                     </p>)
                 }
             </div>
+            <LeftNavDown></LeftNavDown>
         </div>
     );
 };
