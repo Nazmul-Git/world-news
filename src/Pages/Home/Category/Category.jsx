@@ -12,8 +12,6 @@ const Category = () => {
         <div>
             {
                 categoryNews.map(news=><NewsCard key={news._id} news={news}>
-
-
                 </NewsCard>)
             }
         </div>
