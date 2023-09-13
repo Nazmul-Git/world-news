@@ -41,9 +41,12 @@ const Register = () => {
             .then(result=>{
                 const createdUser=result.user;
                 console.log(createdUser);
+                setError('');
+                form.reset();
             })
             .error(error=>{
                 console.error(error.message);
+                setError(error.message);
             })
         }
         
