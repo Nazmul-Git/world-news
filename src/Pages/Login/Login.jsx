@@ -29,7 +29,7 @@ const Login = () => {
                 <Button variant='primary' type='btn'>Login</Button>
                 <br></br>
                 <Form.Text className='text-secondary'>
-                    Don't have an account ? <Link to='/register'>Register</Link>
+                    Do not have an account ? <Link to='/register'>Register</Link>
                 </Form.Text>
                 <Form.Text className='text-danger'>
 
