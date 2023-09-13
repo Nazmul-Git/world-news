@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const RightNav = () => {
-    const {userGoogleSignIn}=useContext(AuthContext);
+    const {userGoogleSignIn,userGithubSignIn}=useContext(AuthContext);
 
     const handleGoogleSignIn=()=>{
         userGoogleSignIn()
@@ -21,6 +21,18 @@ const RightNav = () => {
             console.error(error.message);
         })
     }
+
+    const handleGithubSignIn=()=>{
+        userGithubSignIn()
+        .then(result=>{
+            const loggedUser=result.user;
+            console.log(loggedUser);
+        })
+        .catch(error=>{
+            console.error(error.message);
+        })
+    }
+    
     return (
         <div >
             <p className='mt-4'>Login with</p>
@@ -28,7 +40,7 @@ const RightNav = () => {
                 <Button onClick={handleGoogleSignIn} className='mb-2' variant="secondary"><FcGoogle /> Login with Google </Button>
             </Link>
             <Link to='/category/0'>
-                <Button variant="secondary"><FaGithub /> Login with Github</Button>
+                <Button onClick={handleGithubSignIn} variant="secondary"><FaGithub /> Login with Github</Button>
             </Link>
 
             <div>
