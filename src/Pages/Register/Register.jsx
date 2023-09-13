@@ -6,6 +6,7 @@ import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
     const [error, setError]=useState('');
+    const [showPass, setShowPass]=useState(false);
     const {createUser}=useContext(AuthContext);
 
     const handleCreateUser=(e)=>{
@@ -78,7 +79,7 @@ const Register = () => {
                         Password
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="password" name='password' required placeholder="Password" />
+                        <Form.Control type={showPass? 'text':'password'} name='password' required placeholder="Password" />
                     </Col>
                 </Form.Group>
 
@@ -87,9 +88,16 @@ const Register = () => {
                         Confirm Password
                     </Form.Label>
                     <Col sm="10">
-                        <Form.Control type="password" name='confirmPassword' required placeholder="Confirm Password" />
+                        <Form.Control type={showPass? 'text':'password'} name='confirmPassword' required placeholder="Confirm Password" />
                     </Col>
                 </Form.Group>
+                <Form.Text onClick={()=>setShowPass(!showPass)} className='text-danger mt-4'>
+                    <span>
+                        {
+                            showPass? <span>Hide Password</span>: <span>Show Password</span>
+                        }
+                    </span>
+                </Form.Text>
                 <Form.Group>
                     <Form.Check type='checkbox' name='accept' required label='Accept Terms and Conditions'>
 
