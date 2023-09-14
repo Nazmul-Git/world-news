@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
     const [error, setError]=useState('');
     const {userSignIn}=useContext(AuthContext);
+    const navigate=useNavigate();
 
     const handleSignIn =(e)=>{
         e.preventDefault();
@@ -20,6 +21,7 @@ const Login = () => {
             console.log(signedUser);
             setError('');
             form.reset();
+            navigate('/category/0')
         })
         .catch(error=>{
             console.error(error.message);

@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
     const [error, setError]=useState('');
     const [showPass, setShowPass]=useState(false);
     const {createUser}=useContext(AuthContext);
+
+    const navigate=useNavigate();
 
     const handleCreateUser=(e)=>{
         e.preventDefault();
@@ -44,6 +46,7 @@ const Register = () => {
                 console.log(createdUser);
                 setError('');
                 form.reset();
+                navigate('/category/0');
             })
             .error(error=>{
                 console.error(error.message);
@@ -55,7 +58,7 @@ const Register = () => {
     return (
         <Container className='w-25 mx-auto mt-4'>
             <Form onSubmit={handleCreateUser}>
-                <h3 className='text-center'>Please Login...</h3>
+                <h3 className='text-center'>Please Register...</h3>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextName">
                     <Form.Label column sm="2">
                         Username
