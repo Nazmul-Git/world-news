@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
@@ -10,6 +10,8 @@ const Register = () => {
     const {createUser}=useContext(AuthContext);
 
     const navigate=useNavigate();
+    const location=useLocation();
+    const from=location.state?.from?.pathname || '/category/0';
 
     const handleCreateUser=(e)=>{
         e.preventDefault();
@@ -46,7 +48,7 @@ const Register = () => {
                 console.log(createdUser);
                 setError('');
                 form.reset();
-                navigate('/category/0');
+                navigate(from, {replace: true});
             })
             .error(error=>{
                 console.error(error.message);
