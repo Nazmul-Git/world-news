@@ -8,6 +8,7 @@ const Register = () => {
     const [error, setError]=useState('');
     const [showPass, setShowPass]=useState(false);
     const {createUser}=useContext(AuthContext);
+    const [accepted, setAccepted]=useState(false);
 
     const navigate=useNavigate();
     const location=useLocation();
@@ -57,6 +58,11 @@ const Register = () => {
         }
         
     }
+
+    const handleAccepted=e=>{
+        const check=e.target.checked;
+        setAccepted(check);
+    }
     return (
         <Container className='w-25 mx-auto mt-4'>
             <Form onSubmit={handleCreateUser}>
@@ -104,12 +110,13 @@ const Register = () => {
                     </span>
                 </Form.Text>
                 <Form.Group>
-                    <Form.Check type='checkbox' name='accept' required label='Accept Terms and Conditions'>
+                    <Form.Check onClick={handleAccepted} type='checkbox' name='accept' required  
+                    label={<>Accept <Link to='/terms'> Terms and Conditions</Link></>}>
 
                     </Form.Check>
                 </Form.Group>
 
-                <Button variant='primary' type='btn'>Register</Button>
+                <Button variant='primary' disabled={!accepted} type='btn'>Register</Button>
                 <br></br>
                 <Form.Text className='text-secondary'>
                     Already have an account ? <Link to='/login'>Login</Link>

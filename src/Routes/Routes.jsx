@@ -9,6 +9,7 @@ import LoginLayout from '../Layouts/LoginLayout';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import Terms from '../Terms/Terms';
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
             {
                 path: 'register',
                 element: <Register></Register>
+            },
+            {
+                path:'/terms',
+                element: <Terms></Terms>
             }
         ]
     },

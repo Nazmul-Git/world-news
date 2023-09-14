@@ -17,22 +17,27 @@ const AuthProvider = ({ children }) => {
     
 
     const createUser = (email, pass) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, pass);
     }
 
     const userSignIn = (email, pass) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, pass);
     }
 
     const userGoogleSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
     const userGithubSignIn = () => {
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
 
     const logOut=()=>{
+        setLoading(true);
         return signOut(auth);
     }
 
