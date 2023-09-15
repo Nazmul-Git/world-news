@@ -2,6 +2,7 @@
 import moment from 'moment';
 import { Button, Container } from 'react-bootstrap';
 import Marquee from "react-fast-marquee";
+import { GiWorld } from "react-icons/gi";
 
 
 const Header = () => {
@@ -9,7 +10,7 @@ const Header = () => {
     return (
         <Container className='mt-4'>
             <div className='text-center'>
-                <h1 className='font-bold'>The World News</h1>
+                <h1 className='font-bold'> <GiWorld></GiWorld> The World News</h1>
                 <p>Journalism Without Fear or Favour</p>
                 <p>{moment().format("dddd, MMMM Do, YYYY, h:mm:ss a")}</p>
             </div>

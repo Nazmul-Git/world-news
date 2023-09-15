@@ -20,7 +20,7 @@ const NavigationBar = () => {
                 <Container>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="mx-auto">
+                        <Nav className="mx-auto flex gap-4">
                             <Link to='/category/0'>Home</Link>
                             <Link href="#pricing">About</Link>
                             <Link href="#deets">Career</Link>
